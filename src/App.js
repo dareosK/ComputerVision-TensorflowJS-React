@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 // 1. Import required model here (then -> 3.)
-// e.g. import * as tfmodel from "@tensorflow-models/tfmodel";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 
 import Webcam from "react-webcam";
@@ -46,7 +45,6 @@ function App() {
       canvasRef.current.height = videoHeight;
 
       // 4. Make Detections
-      // e.g. const obj = await net.detect(video);
       const obj = await net.detect(video);
       // console.log(obj);
 
