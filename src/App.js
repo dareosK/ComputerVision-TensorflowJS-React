@@ -1,13 +1,13 @@
 // Import dependencies
 import React, { useRef, useState, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
-// 1. TODO - Import required model here (then -> 3.)
+// 1. Import required model here (then -> 3.)
 // e.g. import * as tfmodel from "@tensorflow-models/tfmodel";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 
 import Webcam from "react-webcam";
 import "./App.css";
-// 2. Import drawing utility here
+// 2. Import drawing function here
 import { drawRect } from "./utilities";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
   // Main function
   const runCoco = async () => {
-    // 3. TODO - Load network (model  from step 1)
+    // 3. Load network (model  from step 1)
     const net = await cocossd.load();
 
     //  Loop and detect hands
@@ -45,14 +45,15 @@ function App() {
       canvasRef.current.width = videoWidth;
       canvasRef.current.height = videoHeight;
 
-      // 4. TODO - Make Detections
+      // 4. Make Detections
       // e.g. const obj = await net.detect(video);
       const obj = await net.detect(video);
       // console.log(obj);
+
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
 
-      // 5. TODO - Update drawing utility
+      // 5. Update drawing utility (function)
       // drawSomething(obj, ctx)
       drawRect(obj, ctx);
     }
