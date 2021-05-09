@@ -7,8 +7,8 @@ import * as cocossd from "@tensorflow-models/coco-ssd";
 
 import Webcam from "react-webcam";
 import "./App.css";
-// 2. TODO - Import drawing utility here
-// e.g. import { drawRect } from "./utilities";
+// 2. Import drawing utility here
+import { drawRect } from "./utilities";
 
 function App() {
   const webcamRef = useRef(null);
@@ -54,6 +54,7 @@ function App() {
 
       // 5. TODO - Update drawing utility
       // drawSomething(obj, ctx)
+      drawRect(obj, ctx);
     }
   };
 
